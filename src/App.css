@@ -180,6 +180,31 @@
   margin-bottom: 48px;
 }
 
+/* ─── HEADSHOTS ──────────────────────────────────────────── */
+.headshots-section {
+  background: var(--cream);
+  padding: 72px 48px;
+}
+
+.headshots-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.headshots-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.headshot-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
 /* ─── ABOUT ──────────────────────────────────────────────── */
 .about-section {
   background: var(--cream);
@@ -481,6 +506,9 @@
 
   .awards-inner { flex-direction: column; gap: 32px; }
   .award-divider { display: none; }
+
+  .headshots-section { padding: 48px 24px; }
+  .headshots-grid { gap: 16px; }
 
   .nav { padding: 0 24px; }
   .section { padding: 64px 24px; }

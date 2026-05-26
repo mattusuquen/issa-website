@@ -72,6 +72,16 @@ export default function App() {
         </div>
       </section>
 
+      {/* HEADSHOTS */}
+      <section className="headshots-section">
+        <div className="headshots-inner">
+          <div className="headshots-grid">
+            <img src="/headshot1.jpg" alt="Isabelle Usuquen headshot" className="headshot-img" />
+            <img src="/headshot2.jpg" alt="Isabelle Usuquen headshot" className="headshot-img" />
+          </div>
+        </div>
+      </section>
+
       {/* ABOUT */}
       <section className="section about-section" id="about">
         <div className="section-inner about-inner">
@@ -126,6 +136,21 @@ export default function App() {
         </div>
       </section>
 
+      {/* AWARDS */}
+      <section className="section awards-section">
+        <div className="section-inner awards-inner">
+          <div className="award-item">
+            <div className="award-year">2025</div>
+            <div className="award-name">National School Choral Award</div>
+          </div>
+          <div className="award-divider" />
+          <div className="award-item">
+            <div className="award-year">2024</div>
+            <div className="award-name">Most Outstanding Youth — Filipino American Association of Central New Jersey</div>
+          </div>
+        </div>
+      </section>
+
       {/* TRAINING */}
       <section className="section training-section" id="training">
         <div className="section-inner">
@@ -153,21 +178,6 @@ export default function App() {
               <div className="training-category">Master Classes</div>
               <p>Michael Cassara · Andrew Byrne · Merri Sugarman (TRC Company) · Michael Goddard · Ellery Sandhu</p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* AWARDS */}
-      <section className="section awards-section">
-        <div className="section-inner awards-inner">
-          <div className="award-item">
-            <div className="award-year">2025</div>
-            <div className="award-name">National School Choral Award</div>
-          </div>
-          <div className="award-divider" />
-          <div className="award-item">
-            <div className="award-year">2024</div>
-            <div className="award-name">Most Outstanding Youth — Filipino American Association of Central New Jersey</div>
           </div>
         </div>
       </section>
