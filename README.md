@@ -1,17 +1,62 @@
-# React + Vite
+# Isabelle Usuquen — Portfolio Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site for Isabelle Usuquen, musical theatre artist. Built with React 19 + Vite.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** — UI components
+- **Vite 8** — dev server and build
+- **Plain CSS** — design tokens + scoped class names in `App.css`
+- No external UI libraries or CSS frameworks
 
-## React Compiler
+## Project structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+src/
+  components/
+    NavBar.jsx       sticky navigation bar
+    Hero.jsx         name/tagline hero block
+    StatsBar.jsx     four highlight stats (productions, voice, degree, awards)
+    About.jsx        headshot + bio
+    Credits.jsx      stage credits table
+    CreditsRow.jsx   single row within the credits table
+    Awards.jsx       national awards banner
+    Training.jsx     education & training grid
+    Skills.jsx       special skills pill list
+    Footer.jsx       contact footer
+  data/
+    productions.js   static array of stage credits
+    skills.js        static array of special skills
+  App.jsx            thin composition layer — renders sections in order
+  App.css            design tokens and all styles
+```
 
-## Expanding the ESLint configuration
+## Getting started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# issa-website
+```bash
+npm install
+npm run dev
+```
+
+The dev server runs at `http://localhost:5173` with hot module replacement.
+
+## Other commands
+
+```bash
+npm run build      # production build → dist/
+npm run preview    # preview the production build locally
+npm run lint       # run ESLint
+```
+
+## Content updates
+
+| What to change | Where |
+|---|---|
+| Stage credits | `src/data/productions.js` |
+| Special skills | `src/data/skills.js` |
+| Bio copy | `src/components/About.jsx` |
+| Awards | `src/components/Awards.jsx` |
+| Training cards | `src/components/Training.jsx` |
+| Stats bar values | `src/components/StatsBar.jsx` |
+| Colors / fonts | `:root` tokens in `src/App.css` |
+| Headshot image | replace `public/headshot1.jpg` |
