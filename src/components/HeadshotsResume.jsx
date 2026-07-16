@@ -19,6 +19,7 @@ export default function HeadshotsResume() {
     <section className="hr-section">
       <div className="hr-banner">
         <div className="hr-banner-overlay">
+          <span className="hr-banner-label">Download</span>
           <span className="hr-banner-name">H &amp; R</span>
         </div>
       </div>
