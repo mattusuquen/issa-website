@@ -9,13 +9,13 @@ const videos = [
 export default function Media() {
   return (
     <section className="media-section" id="media">
-      <div className="media-title-box">
+      <div className="media-title-box media-fade-1">
         <span className="media-title">Media</span>
       </div>
 
-      <div className="media-videos">
+      <div className="media-videos media-fade-2">
         {videos.map((v) => (
-          <div key={v.id + v.title} className="media-video-wrapper">
+          <div key={v.url} className="media-video-wrapper">
             <iframe
               src={v.url}
               title={v.title}

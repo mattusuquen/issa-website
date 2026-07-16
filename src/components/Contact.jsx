@@ -25,16 +25,16 @@ export default function Contact() {
 
   return (
     <section className="contact-section" id="contact">
-      <div className="contact-title-box">
+      <div className="contact-title-box contact-fade-1">
         <span className="contact-title">Contact</span>
       </div>
 
       <div className="section-inner contact-inner">
-        <h2 className="contact-name">Isabelle Usuquen</h2>
+        <h2 className="contact-name contact-fade-2">Isabelle Usuquen</h2>
 
-        <img src="/headshot1.jpg" alt="Isabelle Usuquen" className="contact-headshot" />
+        <img src="/headshot1.jpg" alt="Isabelle Usuquen" className="contact-headshot contact-fade-3" />
 
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form className="contact-form contact-fade-4" onSubmit={handleSubmit}>
           <div className="contact-form-row">
             <div className="contact-field">
               <label htmlFor="firstName">First Name</label>
