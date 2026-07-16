@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
 /* ─── Design tokens ─────────────────────────────────────── */
 :root {
   --rose: #DFA3A4;
@@ -35,9 +37,8 @@
 }
 
 .nav-name {
-  font-family: var(--serif);
-  font-size: 1rem;
-  letter-spacing: 0.06em;
+  font-family: 'Dancing Script', 'Brush Script MT', cursive;
+  font-size: 1.4rem;
   color: var(--dark);
   text-decoration: none;
 }
@@ -204,42 +205,66 @@
 
 /* ─── ABOUT ──────────────────────────────────────────────── */
 .about-section {
-  background: var(--cream);
+  position: relative;
+  background-image: url('/headshot3.png');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
 }
 
-.about-inner {
+.about-banner {
   display: flex;
-  gap: 64px;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 48px 80px;
 }
 
-.about-headshot {
-  flex-shrink: 0;
-  width: 260px;
+.about-banner-overlay {
+  background: var(--cream);
+  opacity: 0.92;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 56px;
 }
 
-.headshot-img {
-  width: 100%;
-  border-radius: 10px;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
+.about-banner-label {
+  font-size: 1.5rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--terra);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
 }
 
-.about-content {
-  flex: 1;
+.about-banner-name {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4.5vw, 60px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dark);
+  line-height: 1;
+}
+
+.about-content-section {
+  padding: 72px 48px 100px;
 }
 
 .about-body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 680px;
+  margin: 0 auto;
+  background: rgba(242, 232, 228, 0.88);
+  padding: 48px 56px;
 }
 
 .about-body p {
-  font-size: 1.05rem;
-  line-height: 1.75;
+  font-size: 1.2rem;
+  line-height: 1.85;
   color: #4a2e22;
 }
 
@@ -556,13 +581,20 @@
     display: none;
   }
 
-  .about-inner {
-    flex-direction: column;
-    gap: 32px;
+  .about-banner {
+    padding: 80px 24px 56px;
   }
 
-  .about-headshot {
-    width: 200px;
+  .about-banner-overlay {
+    padding: 20px 36px;
+  }
+
+  .about-content-section {
+    padding: 48px 24px 72px;
+  }
+
+  .about-body {
+    padding: 36px 32px;
   }
 
   .credits-header,
