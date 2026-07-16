@@ -9,6 +9,7 @@ export default function About() {
       </div>
 
       <div className="about-content-section">
+        <div className="about-body-frame">
         <div className="about-body">
           <p>
             <span className="about-drop-name">Isabelle's</span> love for performing began at an early age, growing up in a lively and
@@ -30,6 +31,7 @@ export default function About() {
             she can be found training for a half marathon, trying all the dessert spots in town, or
             spending time with her dogs.
           </p>
+        </div>
         </div>
       </div>
     </section>

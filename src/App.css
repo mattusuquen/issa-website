@@ -10,9 +10,9 @@
   --white: #FFFFFF;
 
   --serif: 'Castoro Titling', 'Georgia', serif;
-  --sans: 'Castoro Titling', 'Georgia', serif;
+  --sans: 'Georgia', serif;
 
-  font-family: 'Castoro Titling', 'Georgia', serif;
+  font-family: var(--sans);
   color: var(--dark);
   background: var(--cream);
 }
@@ -230,7 +230,8 @@
 
 .about-banner-overlay {
   background: var(--cream);
-  opacity: 0.92;
+  opacity: 0.78;
+  border: 5px solid var(--terra);
   display: flex;
   align-items: center;
   gap: 20px;
@@ -261,6 +262,12 @@
   padding: 0;
 }
 
+.about-body-frame {
+  border: 1px solid rgba(164, 83, 58, 0.3);
+  padding: 48px 56px;
+  background: rgba(242, 232, 228, 0.78);
+}
+
 .about-body {
   display: flex;
   flex-direction: column;
@@ -281,7 +288,7 @@
 }
 
 .about-body p {
-  font-size: 1.2rem;
+  font-size: 1.45rem;
   line-height: 1.85;
   color: #4a2e22;
 }
@@ -845,8 +852,12 @@
     padding: 0;
   }
 
+  .about-body-frame {
+    padding: 32px 24px;
+  }
+
   .about-body {
-    padding: 36px 32px;
+    padding: 0;
   }
 
   .credits-header,
