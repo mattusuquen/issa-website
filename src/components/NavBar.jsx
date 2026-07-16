@@ -35,7 +35,7 @@ export default function NavBar() {
                     <div className="nav-dropdown">
                         <Link to="/" onClick={handleLinkClick}>Welcome</Link>
                         <Link to="/about" onClick={handleLinkClick}>About</Link>
-                        <Link to="/theatre" onClick={handleLinkClick}>Theatre</Link>
+                        <Link to="/media" onClick={handleLinkClick}>Media</Link>
                         <Link to="/training" onClick={handleLinkClick}>Training</Link>
                         <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
                     </div>

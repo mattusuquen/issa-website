@@ -4,14 +4,14 @@ import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
 import About from './components/About'
-import Credits from './components/Credits'
+import Media from './components/Media'
 import Awards from './components/Awards'
 import Training from './components/Training'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 
-function TheatrePage() {
-  return <><Credits /><Awards /></>
+function MediaPage() {
+  return <Media />
 }
 
 function TrainingPage() {
@@ -25,7 +25,7 @@ export default function App() {
       <Routes>
         <Route path="/"         element={<Hero />} />
         <Route path="/about"    element={<About />} />
-        <Route path="/theatre"  element={<TheatrePage />} />
+        <Route path="/media"    element={<MediaPage />} />
         <Route path="/training" element={<TrainingPage />} />
         <Route path="/contact"  element={<Contact />} />
       </Routes>
