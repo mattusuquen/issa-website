@@ -32,13 +32,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 48px;
+  padding: 48px 48px;
   height: 60px;
 }
 
 .nav-name {
   font-family: 'Dancing Script', 'Brush Script MT', cursive;
-  font-size: 1.4rem;
+  font-size: 2rem;
   color: var(--dark);
   text-decoration: none;
 }
@@ -51,15 +51,23 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  color: var(--dark);
-  font-family: var(--sans);
-  padding: 4px 0;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
 }
 
-.nav-more:hover {
-  color: var(--terra);
+.hamburger-line {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--dark);
+  transition: background 0.15s;
+}
+
+.nav-more:hover .hamburger-line {
+  background: var(--terra);
 }
 
 .nav-dropdown {

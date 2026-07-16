@@ -29,7 +29,9 @@ export default function NavBar() {
                     aria-expanded={open}
                     aria-label="Navigation menu"
                 >
-                    More
+                    <span className="hamburger-line" />
+                    <span className="hamburger-line" />
+                    <span className="hamburger-line" />
                 </button>
                 {open && (
                     <div className="nav-dropdown">
