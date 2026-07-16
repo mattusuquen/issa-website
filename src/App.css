@@ -268,6 +268,50 @@
   color: #4a2e22;
 }
 
+/* ─── MEDIA ──────────────────────────────────────────────── */
+.media-section {
+  background: var(--cream);
+  padding: 64px 48px 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.media-title-box {
+  border: 1.5px solid var(--terra);
+  padding: 18px 64px;
+}
+
+.media-title {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
+.media-videos {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.media-video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.media-video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
 /* ─── THEATRE CREDITS ────────────────────────────────────── */
 .credits-section {
   background: var(--mocha);
