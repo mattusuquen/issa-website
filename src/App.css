@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Castoro+Titling&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Castoro+Titling&family=Nanum+Myeongjo&display=swap');
 
 /* ─── Design tokens ─────────────────────────────────────── */
 :root {
@@ -288,6 +288,7 @@
 }
 
 .about-body p {
+  font-family: 'Nanum Myeongjo', Georgia, serif;
   font-size: 1.45rem;
   line-height: 1.85;
   color: #4a2e22;
