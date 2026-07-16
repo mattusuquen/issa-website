@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Castoro+Titling&display=swap');
 
 /* ─── Design tokens ─────────────────────────────────────── */
 :root {
@@ -9,10 +9,10 @@
   --dark: #2B1A14;
   --white: #FFFFFF;
 
-  --serif: 'Georgia', 'Times New Roman', serif;
-  --sans: system-ui, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --serif: 'Castoro Titling', 'Georgia', serif;
+  --sans: 'Castoro Titling', 'Georgia', serif;
 
-  font-family: var(--sans);
+  font-family: 'Castoro Titling', 'Georgia', serif;
   color: var(--dark);
   background: var(--cream);
 }
@@ -37,8 +37,9 @@
 }
 
 .nav-name {
-  font-family: 'Dancing Script', 'Brush Script MT', cursive;
-  font-size: 2rem;
+  font-family: 'Castoro Titling', 'Georgia', serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
   color: var(--dark);
   text-decoration: none;
 }
