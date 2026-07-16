@@ -460,13 +460,17 @@
 .marquee {
   overflow: hidden;
   width: 100%;
+  cursor: grab;
+}
+
+.marquee:active {
+  cursor: grabbing;
 }
 
 .marquee-track {
   display: flex;
   gap: 12px;
   width: max-content;
-  animation: marquee-scroll 100s linear infinite;
 }
 
 
@@ -478,10 +482,6 @@
   display: block;
 }
 
-@keyframes marquee-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
 
 /* ─── TRAINING ───────────────────────────────────────────── */
 .training-section {
