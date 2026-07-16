@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 export default function NavBar() {
     const [open, setOpen] = useState(false)
+    const { pathname } = useLocation()
     const menuRef = useRef(null)
 
     useEffect(() => {
@@ -21,7 +22,9 @@ export default function NavBar() {
 
     return (
         <nav className="nav">
-            <Link to="/" className="nav-name" onClick={handleLinkClick}>welcome</Link>
+            <Link to="/" className="nav-name" onClick={handleLinkClick}>
+                {pathname === '/' ? 'welcome' : 'Isabelle Usuquen'}
+            </Link>
             <div className="nav-menu" ref={menuRef}>
                 <button
                     className="nav-more"
