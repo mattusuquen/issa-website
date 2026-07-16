@@ -214,10 +214,17 @@
 /* ─── ABOUT ──────────────────────────────────────────────── */
 .about-section {
   position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  position: fixed;
+  inset: 0;
   background-image: url('/headshot3.png');
   background-size: cover;
   background-position: center top;
-  background-attachment: fixed;
+  z-index: 0;
 }
 
 .about-banner {
@@ -225,6 +232,8 @@
   align-items: center;
   justify-content: center;
   padding: 120px 48px 80px;
+  position: relative;
+  z-index: 1;
 }
 
 .about-banner-overlay {
