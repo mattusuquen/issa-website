@@ -214,17 +214,10 @@
 /* ─── ABOUT ──────────────────────────────────────────────── */
 .about-section {
   position: relative;
-  overflow: hidden;
-}
-
-.about-section::before {
-  content: '';
-  position: fixed;
-  inset: 0;
   background-image: url('/headshot3.png');
   background-size: cover;
   background-position: center top;
-  z-index: 0;
+  background-attachment: fixed;
 }
 
 .about-banner {
@@ -232,8 +225,6 @@
   align-items: center;
   justify-content: center;
   padding: 120px 48px 80px;
-  position: relative;
-  z-index: 1;
 }
 
 .about-banner-overlay {
@@ -273,9 +264,9 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 680px;
+  max-width: 100%;
   margin: 0 auto;
-  background: rgba(242, 232, 228, 0.88);
+  background: rgba(242, 232, 228, 1);
   padding: 48px 56px;
 }
 
