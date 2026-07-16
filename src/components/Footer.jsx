@@ -44,10 +44,19 @@ export default function Footer() {
         <span className="footer-name">Isabelle Usuquen</span>
         <div className="footer-socials">
           {socials.map(({ label, href, icon }) => (
-            <a key={label} href={href} className="footer-social-icon" aria-label={label}>
+            <a key={label} href={href} className="footer-social-icon" aria-label={label} target="_blank" rel="noopener noreferrer">
               {icon}
             </a>
           ))}
+          <a
+            href="https://resumes.actorsaccess.com/IsabelleUsuquen"
+            className="footer-actors-access"
+            aria-label="Actor's Access"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            A
+          </a>
         </div>
       </div>
     </footer>

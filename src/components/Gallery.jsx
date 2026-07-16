@@ -114,11 +114,11 @@ function Marquee({ images }) {
 export default function Gallery() {
   return (
     <section className="gallery-section" id="gallery">
-      <div className="gallery-title-box">
+      <div className="gallery-title-box gallery-fade-1">
         <span className="gallery-title">Gallery</span>
       </div>
 
-      <div className="gallery-shows">
+      <div className="gallery-shows gallery-fade-2">
         <Marquee images={images} />
       </div>
     </section>

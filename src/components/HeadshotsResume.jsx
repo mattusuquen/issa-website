@@ -18,13 +18,13 @@ export default function HeadshotsResume() {
   return (
     <section className="hr-section">
       <div className="hr-banner">
-        <div className="hr-banner-overlay">
+        <div className="hr-banner-overlay hr-fade-1">
           <span className="hr-banner-label">Download</span>
           <span className="hr-banner-name">H &amp; R</span>
         </div>
       </div>
 
-      <div className="hr-content">
+      <div className="hr-content hr-fade-2">
         <div className="hr-block">
           <h2 className="hr-heading">Headshot</h2>
           <div className="hr-grid">

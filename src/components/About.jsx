@@ -1,14 +1,29 @@
+import { useEffect, useRef } from 'react'
+
 export default function About() {
+  const contentRef = useRef(null)
+
+  useEffect(() => {
+    const el = contentRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { el.classList.add('about-content-visible'); observer.disconnect() } },
+      { threshold: 0.05 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section className="about-section" id="about">
-      <div className="about-banner">
+      <div className="about-banner about-fade-1">
         <div className="about-banner-overlay">
           <span className="about-banner-label">About</span>
           <span className="about-banner-name">Isabelle</span>
         </div>
       </div>
 
-      <div className="about-content-section">
+      <div className="about-content-section about-content-reveal" ref={contentRef}>
         <div className="about-body-frame">
         <div className="about-body">
           <p>

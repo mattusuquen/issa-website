@@ -9,6 +9,7 @@ import Awards from './components/Awards'
 import Gallery from './components/Gallery'
 import Contact from './components/Contact'
 import HeadshotsResume from './components/HeadshotsResume'
+import ScrollToTop from './components/ScrollToTop'
 
 function MediaPage() {
   return <Media />
@@ -21,6 +22,7 @@ function GalleryPage() {
 export default function App() {
   return (
     <div className="portfolio">
+      <ScrollToTop />
       <NavBar />
       <Routes>
         <Route path="/"         element={<Hero />} />
