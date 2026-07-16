@@ -560,15 +560,34 @@
 /* ─── CONTACT ────────────────────────────────────────────── */
 .contact-section {
   background: var(--cream);
-  min-height: 60vh;
+  padding-bottom: 96px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+}
+
+.contact-title-box {
+  border: 1.5px solid var(--terra);
+  padding: 18px 64px;
+  margin: 64px 0 56px;
+}
+
+.contact-title {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dark);
 }
 
 .contact-inner {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 16px;
+  width: 100%;
 }
 
 .contact-name {
@@ -576,6 +595,16 @@
   font-size: clamp(36px, 5vw, 64px);
   font-weight: 400;
   color: var(--dark);
+}
+
+.contact-headshot {
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  margin: 24px 0;
 }
 
 .contact-tagline {
@@ -605,6 +634,83 @@
 
 .contact-dot {
   color: rgba(43, 26, 20, 0.3);
+}
+
+.contact-form {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 24px;
+  width: 100%;
+  max-width: 560px;
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-field label {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--dark);
+}
+
+.contact-field input,
+.contact-field textarea {
+  border: 1.5px solid rgba(43, 26, 20, 0.25);
+  background: transparent;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  font-family: var(--sans);
+  color: var(--dark);
+  outline: none;
+  resize: none;
+  transition: border-color 0.15s;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: var(--terra);
+}
+
+.contact-submit {
+  background: var(--mocha);
+  color: var(--white);
+  border: none;
+  padding: 16px;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.contact-submit:hover {
+  background: var(--terra);
+}
+
+.contact-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.contact-form-success {
+  font-size: 0.9rem;
+  color: var(--terra);
+}
+
+.contact-form-error {
+  font-size: 0.9rem;
+  color: #b94040;
 }
 
 /* ─── RESPONSIVE ─────────────────────────────────────────── */
