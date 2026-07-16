@@ -11,7 +11,7 @@ export default function About() {
       <div className="about-content-section">
         <div className="about-body">
           <p>
-            Isabelle Usuquen's love for performing began at an early age, growing up in a lively and
+            <span className="about-drop-name">Isabelle's</span> love for performing began at an early age, growing up in a lively and
             music-rich Filipino household in Central New Jersey. Whether singing solo at the yearly
             Simbang Gabi Christmas mass, making ridiculous parodies with her older brother, or joining
             karaoke sessions, music always found a way to bring joy into her life.
