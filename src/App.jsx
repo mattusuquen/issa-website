@@ -8,6 +8,7 @@ import Media from './components/Media'
 import Awards from './components/Awards'
 import Gallery from './components/Gallery'
 import Contact from './components/Contact'
+import HeadshotsResume from './components/HeadshotsResume'
 
 function MediaPage() {
   return <Media />
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="/media"    element={<MediaPage />} />
         <Route path="/gallery"  element={<GalleryPage />} />
         <Route path="/contact"  element={<Contact />} />
+        <Route path="/hr"       element={<HeadshotsResume />} />
       </Routes>
       <Footer />
     </div>

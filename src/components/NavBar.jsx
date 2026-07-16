@@ -39,6 +39,7 @@ export default function NavBar() {
                         <Link to="/about" onClick={handleLinkClick}>About</Link>
                         <Link to="/media" onClick={handleLinkClick}>Media</Link>
                         <Link to="/gallery" onClick={handleLinkClick}>Gallery</Link>
+                        <Link to="/hr" onClick={handleLinkClick}>H&amp;R</Link>
                         <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
                     </div>
                 )}
