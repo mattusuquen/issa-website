@@ -8,6 +8,7 @@ import Credits from './components/Credits'
 import Awards from './components/Awards'
 import Training from './components/Training'
 import Skills from './components/Skills'
+import Contact from './components/Contact'
 
 function TheatrePage() {
   return <><Credits /><Awards /></>
@@ -26,8 +27,9 @@ export default function App() {
         <Route path="/about"    element={<About />} />
         <Route path="/theatre"  element={<TheatrePage />} />
         <Route path="/training" element={<TrainingPage />} />
-        <Route path="/contact"  element={<Footer />} />
+        <Route path="/contact"  element={<Contact />} />
       </Routes>
+      <Footer />
     </div>
   )
 }
