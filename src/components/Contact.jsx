@@ -31,13 +31,6 @@ export default function Contact() {
 
       <div className="section-inner contact-inner">
         <h2 className="contact-name">Isabelle Usuquen</h2>
-        <div className="contact-links">
-          <a href="mailto:irusuquen@gmail.com">irusuquen@gmail.com</a>
-          <span className="contact-dot">·</span>
-          <a href="tel:6095299443">(609) 529-9443</a>
-          <span className="contact-dot">·</span>
-          <a href="https://resumes.actorsaccess.com/IsabelleUsuquen" target="_blank" rel="noreferrer">Actor's Access</a>
-        </div>
 
         <img src="/headshot1.jpg" alt="Isabelle Usuquen" className="contact-headshot" />
 
