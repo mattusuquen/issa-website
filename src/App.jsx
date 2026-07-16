@@ -6,16 +6,15 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Media from './components/Media'
 import Awards from './components/Awards'
-import Training from './components/Training'
-import Skills from './components/Skills'
+import Gallery from './components/Gallery'
 import Contact from './components/Contact'
 
 function MediaPage() {
   return <Media />
 }
 
-function TrainingPage() {
-  return <><Training /><Skills /></>
+function GalleryPage() {
+  return <Gallery />
 }
 
 export default function App() {
@@ -26,7 +25,7 @@ export default function App() {
         <Route path="/"         element={<Hero />} />
         <Route path="/about"    element={<About />} />
         <Route path="/media"    element={<MediaPage />} />
-        <Route path="/training" element={<TrainingPage />} />
+        <Route path="/gallery"  element={<GalleryPage />} />
         <Route path="/contact"  element={<Contact />} />
       </Routes>
       <Footer />

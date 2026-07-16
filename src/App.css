@@ -389,6 +389,91 @@
   font-style: normal;
 }
 
+/* ─── GALLERY ────────────────────────────────────────────── */
+.gallery-section {
+  background: var(--cream);
+  padding-bottom: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-title-box {
+  border: 1.5px solid var(--terra);
+  padding: 18px 64px;
+  margin: 64px 0 56px;
+}
+
+.gallery-title {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--dark);
+}
+
+.gallery-shows {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  width: 100%;
+}
+
+.gallery-show {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gallery-show-info {
+  text-align: center;
+  padding: 0 48px;
+}
+
+.gallery-show-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--dark);
+  line-height: 1.1;
+}
+
+.gallery-show-role {
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-top: 8px;
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: marquee-scroll 100s linear infinite;
+}
+
+
+.marquee-img {
+  height: 280px;
+  width: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 /* ─── TRAINING ───────────────────────────────────────────── */
 .training-section {
   background: var(--cream);
@@ -608,9 +693,8 @@
 .contact-headshot {
   width: 100%;
   max-width: 560px;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
+  border-radius: 16px;
   display: block;
   margin: 24px 0;
 }
