@@ -1001,7 +1001,7 @@
 }
 
 .contact-headshot {
-  width: 100%;
+  width: calc(100% - 48px);
   max-width: 560px;
   height: auto;
   border-radius: 16px;
@@ -1046,6 +1046,8 @@
   gap: 24px;
   width: 100%;
   max-width: 560px;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .contact-form-row {
