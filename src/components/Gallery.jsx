@@ -1,24 +1,19 @@
 import { useRef, useEffect } from 'react'
 
 const images = [
-  '/gallery/gallery1.png',
-  '/gallery/gallery2.JPG',
-  '/gallery/gallery3.JPG',
-  '/gallery/gallery4.JPG',
-  '/gallery/gallery5.jpeg',
+  '/gallery/gallery1.jpeg',
+  '/gallery/gallery2.jpeg',
+  '/gallery/gallery3.jpeg',
+  '/gallery/gallery4.jpeg',
+  '/gallery/gallery5.png',
   '/gallery/gallery6.JPG',
-  '/gallery/gallery7.jpeg',
-  '/gallery/gallery8.jpeg',
+  '/gallery/gallery7.JPG',
+  '/gallery/gallery8.JPG',
   '/gallery/gallery9.jpeg',
   '/gallery/gallery10.jpeg',
   '/gallery/gallery11.jpeg',
-  '/gallery/gallery16.jpeg',
-  '/gallery/gallery17.jpeg',
-  '/gallery/gallery18.jpeg',
-  '/gallery/gallery19.jpeg',
-  '/gallery/gallery20.jpeg',
-  '/gallery/gallery21.jpeg',
-  '/gallery/gallery22.jpeg',
+  '/gallery/gallery12.jpeg',
+  '/gallery/gallery13.jpeg',
 ]
 
 function Marquee({ images }) {
