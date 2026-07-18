@@ -1,6 +1,8 @@
 export default function Hero() {
   return (
     <section className="hero">
+      <img src="/leaf.png" alt="" className="hero-leaf hero-leaf--tl" aria-hidden="true" />
+      <img src="/leaf.png" alt="" className="hero-leaf hero-leaf--br" aria-hidden="true" />
       <div className="hero-inner">
         <h1 className="hero-name hero-fade-1">Isabelle<br />Usuquen</h1>
 
