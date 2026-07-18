@@ -964,8 +964,8 @@
 
 .hr-photo-wrap {
   position: relative;
-  flex: 0 0 calc(50% - 8px);
-  max-width: 560px;
+  width: 100%;
+  max-width: 800px;
   aspect-ratio: 3 / 4;
   overflow: hidden;
 }
