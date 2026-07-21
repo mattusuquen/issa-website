@@ -41,7 +41,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <span className="footer-name">Isabelle Usuquen</span>
+        <span className="footer-name">Let's Connect</span>
         <div className="footer-socials">
           {socials.map(({ label, href, icon }) => (
             <a key={label} href={href} className="footer-social-icon" aria-label={label} target="_blank" rel="noopener noreferrer">

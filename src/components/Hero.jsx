@@ -20,7 +20,7 @@ export default function Hero() {
       <div className="hero-photos hero-fade-3">
         <img src="/headshot1.jpg" alt="Isabelle Usuquen" className="hero-photo" />
         <img src="/headshot2.jpg" alt="Isabelle Usuquen" className="hero-photo hero-photo--center" />
-        <img src="/headshot.jpg" alt="Isabelle Usuquen" className="hero-photo" />
+        <img src="/headshot.jpg" alt="Isabelle Usuquen" className="hero-photo hero-photo--right" />
       </div>
 
       <div className="hero-location hero-fade-3">
