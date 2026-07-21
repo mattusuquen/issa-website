@@ -1,19 +1,19 @@
 import { useRef, useEffect, useState } from 'react'
 
 const images = [
-  { src: '/gallery/gallery1.jpeg', show: 'Secret Garden', role: 'Ayah / Ensemble' },
-  { src: '/gallery/gallery2.jpeg', show: 'Secret Garden', role: 'Ayah / Ensemble' },
-  { src: '/gallery/gallery3.jpeg', show: 'Assassins', role: 'Ensemble' },
-  { src: '/gallery/gallery4.jpeg', show: 'Assassins', role: 'Ensemble' },
-  { src: '/gallery/gallery5.png',  show: 'Pippin', role: 'Catherine / Ensemble (U/S)' },
-  { src: '/gallery/gallery6.JPG',  show: 'Pippin', role: 'Catherine / Ensemble (U/S)' },
-  { src: '/gallery/gallery7.JPG',  show: 'Little Shop of Horrors', role: 'Audrey' },
-  { src: '/gallery/gallery8.JPG',  show: 'Little Shop of Horrors', role: 'Audrey' },
+  { src: '/gallery/gallery1.jpeg', show: 'Little Shop of Horrors', role: 'Audrey' },
+  { src: '/gallery/gallery2.jpeg', show: 'Little Shop of Horrors', role: 'Audrey' },
+  { src: '/gallery/gallery3.jpeg', show: 'Little Shop of Horrors', role: 'Audrey' },
+  { src: '/gallery/gallery4.jpeg', show: 'Little Shop of Horrors', role: 'Audrey' },
+  { src: '/gallery/gallery5.png', show: 'The Secret Garden', role: 'Ayah' },
+  { src: '/gallery/gallery6.JPG', show: 'The Secret Garden', role: 'Ayah' },
+  { src: '/gallery/gallery7.JPG', show: 'The Secret Garden', role: 'Ayah' },
+  { src: '/gallery/gallery8.JPG', show: 'The Secret Garden', role: 'Ayah' },
   { src: '/gallery/gallery9.jpeg', show: 'Mean Girls', role: 'Karen Smith' },
   { src: '/gallery/gallery10.jpeg', show: 'Mean Girls', role: 'Karen Smith' },
-  { src: '/gallery/gallery11.jpeg', show: 'The Little Mermaid', role: 'Andrina' },
-  { src: '/gallery/gallery12.jpeg', show: 'The Little Mermaid', role: 'Andrina' },
-  { src: '/gallery/gallery13.jpeg', show: 'Matilda', role: 'Alice' },
+  { src: '/gallery/gallery11.jpeg', show: 'Mean Girls', role: 'Karen Smith' },
+  { src: '/gallery/gallery12.jpeg', show: 'Mean Girls', role: 'Karen Smith' },
+  { src: '/gallery/gallery13.jpeg', show: 'Mean Girls', role: 'Karen Smith' },
 ]
 
 function Lightbox({ item, onClose }) {
@@ -42,6 +42,9 @@ function Marquee({ images, onImageClick }) {
   const trackRef = useRef(null)
   const stateRef = useRef({
     pos: 0,
+    displayPos: 0,
+    nudgeTarget: null,
+    nudgePauseUntil: 0,
     dragging: false,
     dragStartX: 0,
     dragStartPos: 0,
@@ -63,15 +66,28 @@ function Marquee({ images, onImageClick }) {
 
     const tick = (time) => {
       const s = stateRef.current
-      if (!s.dragging) {
+
+      if (s.nudgeTarget !== null) {
+        // Smoothly lerp toward nudge target
+        s.displayPos += (s.nudgeTarget - s.displayPos) * 0.08
+        if (Math.abs(s.nudgeTarget - s.displayPos) < 0.5) {
+          s.displayPos = s.nudgeTarget
+          s.pos = s.nudgeTarget
+          s.nudgeTarget = null
+        }
+      } else if (!s.dragging && time > s.nudgePauseUntil) {
         if (s.lastTime !== null && s.halfWidth > 0) {
           const speed = s.halfWidth / 100
           s.pos -= speed * ((time - s.lastTime) / 1000)
           if (Math.abs(s.pos) >= s.halfWidth) s.pos += s.halfWidth
         }
         s.lastTime = time
+        s.displayPos = s.pos
+      } else {
+        s.lastTime = time
       }
-      track.style.transform = `translateX(${s.pos}px)`
+
+      track.style.transform = `translateX(${s.nudgeTarget !== null ? s.displayPos : s.pos}px)`
       rafRef.current = requestAnimationFrame(tick)
     }
 
@@ -114,29 +130,51 @@ function Marquee({ images, onImageClick }) {
     if (!stateRef.current.didDrag) onImageClick(item)
   }
 
+  const nudge = (dir) => {
+    const s = stateRef.current
+    const base = s.nudgeTarget !== null ? s.nudgeTarget : s.displayPos
+    s.nudgeTarget = base + dir * 600
+    s.nudgePauseUntil = performance.now() + 1200
+    s.lastTime = null
+  }
+
   return (
-    <div
-      className="marquee"
-      onMouseDown={(e) => { e.preventDefault(); dragStart(e.clientX) }}
-      onMouseMove={(e) => dragMove(e.clientX)}
-      onMouseUp={dragEnd}
-      onMouseLeave={dragEnd}
-      onTouchStart={(e) => dragStart(e.touches[0].clientX)}
-      onTouchMove={(e) => { e.preventDefault(); dragMove(e.touches[0].clientX) }}
-      onTouchEnd={dragEnd}
-    >
-      <div className="marquee-track" ref={trackRef}>
-        {doubled.map((item, i) => (
-          <img
-            key={i}
-            src={item.src}
-            alt={item.show}
-            className="marquee-img"
-            draggable={false}
-            onClick={() => handleClick(item)}
-          />
-        ))}
+    <div className="marquee-wrapper">
+      <button className="marquee-chevron marquee-chevron--left" onClick={() => nudge(1)} aria-label="Scroll left">
+        <svg viewBox="0 0 22 40" width="14" height="26" fill="none">
+          <polyline points="20,2 2,20 20,38" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
+
+      <div
+        className="marquee"
+        onMouseDown={(e) => { e.preventDefault(); dragStart(e.clientX) }}
+        onMouseMove={(e) => dragMove(e.clientX)}
+        onMouseUp={dragEnd}
+        onMouseLeave={dragEnd}
+        onTouchStart={(e) => dragStart(e.touches[0].clientX)}
+        onTouchMove={(e) => { e.preventDefault(); dragMove(e.touches[0].clientX) }}
+        onTouchEnd={dragEnd}
+      >
+        <div className="marquee-track" ref={trackRef}>
+          {doubled.map((item, i) => (
+            <img
+              key={i}
+              src={item.src}
+              alt={item.show}
+              className="marquee-img"
+              draggable={false}
+              onClick={() => handleClick(item)}
+            />
+          ))}
+        </div>
       </div>
+
+      <button className="marquee-chevron marquee-chevron--right" onClick={() => nudge(-1)} aria-label="Scroll right">
+        <svg viewBox="0 0 22 40" width="14" height="26" fill="none">
+          <polyline points="2,2 20,20 2,38" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </button>
     </div>
   )
 }
