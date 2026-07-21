@@ -365,12 +365,41 @@
   background-attachment: fixed;
 }
 
+@media (hover: none) and (pointer: coarse) {
+  .about-section {
+    background-attachment: scroll;
+  }
+}
+
 .about-banner {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: calc(100vh - 60px);
   padding: 48px;
+  position: relative;
+}
+
+.about-scroll-chevron {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  opacity: 0.8;
+  animation: chevronBob 1.8s ease-in-out infinite;
+}
+
+.about-scroll-chevron:hover {
+  opacity: 1;
+}
+
+@keyframes chevronBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
 
 .about-banner-overlay {
@@ -1207,6 +1236,20 @@
   .nav-name {
     font-size: 0.75rem;
   }
+
+  .about-body-frame {
+    padding: 24px 16px;
+  }
+
+  .about-body {
+    padding: 16px;
+  }
+
+  .about-body p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
 
   .nav-links {
     gap: 16px;
