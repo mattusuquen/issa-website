@@ -7,7 +7,7 @@ export default function About() {
     const el = contentRef.current
     if (!el) return
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { el.classList.add('about-content-visible'); observer.disconnect() } },
+      ([entry]) => { el.classList.toggle('about-content-visible', entry.isIntersecting) },
       { threshold: 0.05 }
     )
     observer.observe(el)
@@ -21,9 +21,22 @@ export default function About() {
           <span className="about-banner-label">About</span>
           <span className="about-banner-name">Isabelle</span>
         </div>
+        <button
+          className="about-scroll-chevron"
+          aria-label="Scroll to content"
+          onClick={() => {
+            const el = document.getElementById('about-content')
+            const top = el.getBoundingClientRect().top + window.scrollY - 60
+            window.scrollTo({ top, behavior: 'smooth' })
+          }}
+        >
+          <svg viewBox="0 0 40 22" width="26" height="14" fill="none">
+            <polyline points="2,2 20,20 38,2" stroke="var(--cream)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
       </div>
 
-      <div className="about-content-section about-content-reveal" ref={contentRef}>
+      <div className="about-content-section about-content-reveal" id="about-content" ref={contentRef}>
         <div className="about-body-frame">
         <div className="about-body">
           <p>
