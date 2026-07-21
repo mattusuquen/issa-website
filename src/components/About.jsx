@@ -26,7 +26,7 @@ export default function About() {
           aria-label="Scroll to content"
           onClick={() => {
             const el = document.getElementById('about-content')
-            const top = el.getBoundingClientRect().top + window.scrollY - 60
+            const top = el.getBoundingClientRect().top + window.scrollY - 120
             window.scrollTo({ top, behavior: 'smooth' })
           }}
         >
