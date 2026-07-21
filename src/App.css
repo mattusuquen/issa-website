@@ -405,7 +405,7 @@
 .about-banner-overlay {
   background: var(--cream);
   opacity: 0.78;
-  border: 5px solid var(--terra);
+  border: 2px solid var(--terra);
   display: flex;
   align-items: center;
   gap: 20px;
