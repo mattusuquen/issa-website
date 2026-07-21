@@ -220,6 +220,10 @@
   margin-bottom: -8px;
 }
 
+.hero-photo--right {
+  object-position: center 48%;
+}
+
 .hero-leaf {
   position: absolute;
   width: 420px;
@@ -1220,6 +1224,20 @@
 
   .hero-location {
     padding: 20px 20px 48px;
+  }
+
+  .hero-leaf {
+    width: 240px;
+  }
+
+  .hero-leaf--tl {
+    top: -110px;
+    left: -65px;
+  }
+
+  .hero-leaf--br {
+    bottom: -110px;
+    right: -32px;
   }
 }
 
