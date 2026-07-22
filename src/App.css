@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Castoro+Titling&family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito+Sans:wght@300;400;600&display=swap');
 
 /* ─── Design tokens ─────────────────────────────────────── */
 :root {
@@ -9,8 +9,8 @@
   --dark: #2B1A14;
   --white: #FFFFFF;
 
-  --serif: 'Castoro Titling', 'Georgia', serif;
-  --sans: 'Georgia', serif;
+  --serif: 'Inria Serif', 'Georgia', serif;
+  --sans: 'Inria Serif', 'Georgia', serif;
 
   font-family: var(--sans);
   color: var(--dark);
@@ -58,7 +58,7 @@ html, body {
 }
 
 .nav-name {
-  font-family: 'Castoro Titling', 'Georgia', serif;
+  font-family: 'Inria Serif', 'Georgia', serif;
   font-size: 1.15rem;
   text-transform: uppercase;
   color: var(--dark);
@@ -482,7 +482,7 @@ html, body {
 }
 
 .about-body p {
-  font-family: 'Nanum Myeongjo', Georgia, serif;
+  font-family: 'Nunito Sans', Georgia, sans-serif;
   font-size: 1.45rem;
   line-height: 1.85;
   color: #4a2e22;
@@ -527,24 +527,99 @@ html, body {
   color: var(--dark);
 }
 
-.media-videos {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+.media-platforms {
   width: 100%;
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
 }
 
-.media-video-wrapper {
-  width: 100%;
-  aspect-ratio: 16 / 9;
+.media-platform {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.media-video-wrapper iframe {
+.media-platform-label {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.5vw, 30px);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terra);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rose);
+}
+
+.media-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.media-arrow {
+  background: none;
+  border: 1.5px solid var(--terra);
+  color: var(--terra);
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+
+.media-arrow:hover {
+  background: var(--terra);
+  color: var(--white);
+}
+
+.media-slide-clip {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.media-slide-clip--portrait {
+  flex: none;
+  width: 340px;
+}
+
+.media-slide-iframe {
   width: 100%;
   height: 100%;
-  border: none;
   display: block;
+}
+
+@keyframes swipeInLeft {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes swipeInRight {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+.media-swipe-left {
+  animation: swipeInLeft 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.media-swipe-right {
+  animation: swipeInRight 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.media-empty {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(43, 26, 20, 0.4);
+  padding: 24px 0;
 }
 
 /* ─── THEATRE CREDITS ────────────────────────────────────── */
@@ -1366,7 +1441,7 @@ html, body {
 .hr-banner {
   position: relative;
   height: 220px;
-  background: var(--mocha);
+  background: var(--terra);
   display: flex;
   align-items: center;
   justify-content: center;
