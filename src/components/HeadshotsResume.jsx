@@ -21,7 +21,7 @@ export default function HeadshotsResume() {
     const el = pdfWrapRef.current
     if (!el) return
     const observer = new ResizeObserver(([entry]) => {
-      setPdfWidth(entry.contentRect.width)
+      setPdfWidth(Math.min(800, entry.contentRect.width))
     })
     observer.observe(el)
     return () => observer.disconnect()
