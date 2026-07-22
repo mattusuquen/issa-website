@@ -79,7 +79,9 @@ function Marquee({ images, onImageClick }) {
         if (s.lastTime !== null && s.halfWidth > 0) {
           const speed = s.halfWidth / 100
           s.pos -= speed * ((time - s.lastTime) / 1000)
-          if (Math.abs(s.pos) >= s.halfWidth) s.pos += s.halfWidth
+          if (s.halfWidth > 0) {
+            s.pos = ((s.pos % s.halfWidth) - s.halfWidth) % s.halfWidth
+          }
         }
         s.lastTime = time
         s.displayPos = s.pos
@@ -101,6 +103,7 @@ function Marquee({ images, onImageClick }) {
   const dragStart = (clientX) => {
     const s = stateRef.current
     s.dragging = true
+    s.nudgeTarget = null
     s.dragStartX = clientX
     s.dragStartPos = s.pos
     s.lastTime = null
@@ -118,6 +121,7 @@ function Marquee({ images, onImageClick }) {
       newPos = wrapped
     }
     s.pos = newPos
+    s.displayPos = newPos
   }
 
   const dragEnd = () => {
@@ -133,7 +137,11 @@ function Marquee({ images, onImageClick }) {
   const nudge = (dir) => {
     const s = stateRef.current
     const base = s.nudgeTarget !== null ? s.nudgeTarget : s.displayPos
-    s.nudgeTarget = base + dir * 600
+    let target = base + dir * 600
+    if (s.halfWidth > 0) {
+      target = ((target % s.halfWidth) - s.halfWidth) % s.halfWidth
+    }
+    s.nudgeTarget = target
     s.nudgePauseUntil = performance.now() + 1200
     s.lastTime = null
   }

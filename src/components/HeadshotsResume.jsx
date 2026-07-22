@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Document, Page, pdfjs } from 'react-pdf'
 import 'react-pdf/dist/Page/AnnotationLayer.css'
 import 'react-pdf/dist/Page/TextLayer.css'
@@ -14,6 +14,18 @@ const headshots = [
 
 export default function HeadshotsResume() {
   const [numPages, setNumPages] = useState(null)
+  const pdfWrapRef = useRef(null)
+  const [pdfWidth, setPdfWidth] = useState(800)
+
+  useEffect(() => {
+    const el = pdfWrapRef.current
+    if (!el) return
+    const observer = new ResizeObserver(([entry]) => {
+      setPdfWidth(entry.contentRect.width)
+    })
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section className="hr-section">
@@ -46,7 +58,7 @@ export default function HeadshotsResume() {
 
         <div className="hr-block">
           <h2 className="hr-heading">Resume</h2>
-          <div className="hr-pdf-wrap">
+          <div className="hr-pdf-wrap" ref={pdfWrapRef}>
             <div className="hr-pdf-pages">
               <Document
                 file="/resume.pdf"
@@ -56,7 +68,7 @@ export default function HeadshotsResume() {
                   <Page
                     key={i}
                     pageNumber={i + 1}
-                    width={Math.min(800, window.innerWidth - 128)}
+                    width={pdfWidth}
                     renderAnnotationLayer={false}
                     renderTextLayer={false}
                   />
