@@ -23,6 +23,26 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio > *:not(nav):not(footer) {
+  flex: 1;
+}
+
 /* ─── NAV ────────────────────────────────────────────────── */
 .nav {
   position: sticky;
@@ -398,8 +418,8 @@
 }
 
 @keyframes chevronBob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(6px); }
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
 }
 
 .about-banner-overlay {
@@ -938,7 +958,7 @@
 /* ─── FOOTER ─────────────────────────────────────────────── */
 .footer {
   background: var(--dark);
-  padding: 0 48px;
+  padding: 0 28px;
   height: 56px;
 }
 
@@ -954,6 +974,7 @@
   font-size: 0.95rem;
   letter-spacing: 0.04em;
   color: var(--cream);
+  white-space: nowrap;
 }
 
 .footer-socials {
@@ -992,6 +1013,7 @@
   text-decoration: none;
   font-size: 0.75rem;
   font-family: var(--serif);
+  font-weight: bold;
   transition: background 0.2s, border-color 0.2s;
 }
 
