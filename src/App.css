@@ -391,16 +391,6 @@ html, body {
   }
 }
 
-/* Mobile: show full image without cropping */
-@media (hover: none), (pointer: coarse) {
-  .about-section {
-    background-size: contain;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-color: var(--cream);
-  }
-}
-
 .about-banner {
   display: flex;
   align-items: center;
