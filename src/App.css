@@ -396,6 +396,7 @@ html, body {
   .about-section {
     background-size: 200% auto;
     background-position: 55% top;
+    background-repeat: no-repeat;
   }
 }
 
