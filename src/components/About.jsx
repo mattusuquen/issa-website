@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react'
 
 export default function About() {
   const contentRef = useRef(null)
-  const sectionRef = useRef(null)
 
   useEffect(() => {
     const el = contentRef.current
@@ -15,23 +14,8 @@ export default function About() {
     return () => observer.disconnect()
   }, [])
 
-  // Simulate background-attachment: fixed on touch devices (iOS Safari doesn't support it)
-  useEffect(() => {
-    const isTouch = !window.matchMedia('(hover: hover) and (pointer: fine)').matches
-    if (!isTouch) return
-    const section = sectionRef.current
-    if (!section) return
-    const update = () => {
-      const rect = section.getBoundingClientRect()
-      section.style.backgroundPositionY = `${-rect.top * 0.4}px`
-    }
-    update()
-    window.addEventListener('scroll', update, { passive: true })
-    return () => window.removeEventListener('scroll', update)
-  }, [])
-
   return (
-    <section className="about-section" id="about" ref={sectionRef}>
+    <section className="about-section" id="about">
       <div className="about-banner about-fade-1">
         <div className="about-banner-overlay">
           <span className="about-banner-label">About</span>

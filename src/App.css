@@ -391,15 +391,6 @@ html, body {
   }
 }
 
-/* Mobile: pull back zoom so face isn't too close */
-@media (hover: none), (pointer: coarse) {
-  .about-section {
-    background-size: 200% auto;
-    background-position: 55% top;
-    background-repeat: no-repeat;
-  }
-}
-
 .about-banner {
   display: flex;
   align-items: center;
