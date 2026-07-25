@@ -1,6 +1,6 @@
 # Isabelle Usuquen — Portfolio Site
 
-A personal portfolio and press-kit site for Isabelle Usuquen, a musical theatre actress, singer, and dancer. Built as a single-page-app-style React site with client-side routing, it brings together her reels, gallery, credits, headshots, resume, and a contact form in one place.
+A personal portfolio and press-kit site built in JavaScript and React for Isabelle Usuquen, a musical theatre actress, singer, and dancer. Built as a single-page-app-style React site with client-side routing, it brings together her reels, gallery, credits, headshots, resume, and a contact form in one place.
 
 **Live site:** [isabelleusuquen.com](https://isabelleusuquen.com)
 
