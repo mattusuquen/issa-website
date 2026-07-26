@@ -25,7 +25,7 @@ export default function Hero() {
 
       <div className="hero-location hero-fade-3">
         <span className="hero-location-line" />
-        <p className="hero-location-text">NYC &nbsp;|&nbsp; NJ &nbsp;|&nbsp; CLE</p>
+        <p className="hero-location-text">NYC &nbsp;|&nbsp; NJ &nbsp;|&nbsp; OH</p>
       </div>
 
     </section>
