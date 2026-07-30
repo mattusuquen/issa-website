@@ -39,18 +39,25 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="footer-inner">
-        <span className="footer-name">Let's Connect</span>
-        <div className="footer-socials">
+    <footer className="h-14 bg-dark px-7">
+      <div className="flex h-full items-center gap-5">
+        <span className="font-serif text-sm tracking-[0.04em] whitespace-nowrap text-cream">Let's Connect</span>
+        <div className="flex items-center gap-2.5">
           {socials.map(({ label, href, icon }) => (
-            <a key={label} href={href} className="footer-social-icon" aria-label={label} target="_blank" rel="noopener noreferrer">
+            <a
+              key={label}
+              href={href}
+              className="flex h-8 w-8 items-center justify-center rounded-full border-[1.5px] border-cream/25 bg-dark text-cream transition-colors duration-200 hover:border-terra hover:bg-terra"
+              aria-label={label}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {icon}
             </a>
           ))}
           <a
             href="https://resumes.actorsaccess.com/IsabelleUsuquen"
-            className="footer-actors-access"
+            className="flex h-8 w-8 items-center justify-center rounded-full border border-cream/30 font-serif text-xs font-bold text-cream no-underline transition-colors duration-200 hover:border-terra hover:bg-terra"
             aria-label="Actor's Access"
             target="_blank"
             rel="noopener noreferrer"

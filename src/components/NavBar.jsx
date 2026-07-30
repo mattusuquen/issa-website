@@ -21,23 +21,23 @@ export default function NavBar() {
     }
 
     return (
-        <nav className="nav">
-            <Link to="/" className="nav-name" onClick={handleLinkClick}>
+        <nav className="sticky top-0 z-100 flex h-15 items-center justify-between border-b-3 border-terra bg-cream px-6 py-12 max-md:px-6 max-md:py-0">
+            <Link to="/" className="font-serif text-[1.15rem] text-dark uppercase no-underline max-sm:text-xs" onClick={handleLinkClick}>
                 {pathname === '/' ? 'welcome' : 'Isabelle Usuquen'}
             </Link>
-            <div className="nav-menu" ref={menuRef}>
+            <div className="relative" ref={menuRef}>
                 <button
-                    className="nav-more"
+                    className="group flex cursor-pointer flex-col justify-center gap-1.5 border-none bg-none p-1"
                     onClick={() => setOpen(o => !o)}
                     aria-expanded={open}
                     aria-label="Navigation menu"
                 >
-                    <span className="hamburger-line" />
-                    <span className="hamburger-line" />
-                    <span className="hamburger-line" />
+                    <span className="block h-[1.5px] w-5.5 bg-dark transition-colors duration-150 group-hover:bg-terra" />
+                    <span className="block h-[1.5px] w-5.5 bg-dark transition-colors duration-150 group-hover:bg-terra" />
+                    <span className="block h-[1.5px] w-5.5 bg-dark transition-colors duration-150 group-hover:bg-terra" />
                 </button>
                 {open && (
-                    <div className="nav-dropdown">
+                    <div className="absolute top-[calc(100%+12px)] right-0 flex min-w-40 flex-col gap-3.5 bg-cream px-7 py-5 shadow-[0_4px_24px_rgba(43,26,20,0.08)] [&_a]:whitespace-nowrap [&_a]:text-sm [&_a]:tracking-[0.04em] [&_a]:text-dark [&_a]:no-underline [&_a]:transition-colors [&_a]:duration-150 [&_a:hover]:text-terra">
                         <Link to="/" onClick={handleLinkClick}>Welcome</Link>
                         <Link to="/about" onClick={handleLinkClick}>About</Link>
                         <Link to="/media" onClick={handleLinkClick}>Media</Link>
