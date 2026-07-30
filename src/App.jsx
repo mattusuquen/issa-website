@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom'
-import './App.css'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 import Hero from './components/Hero'
@@ -21,7 +20,7 @@ function GalleryPage() {
 
 export default function App() {
   return (
-    <div className="portfolio">
+    <div className="flex flex-1 flex-col [&>*:not(nav):not(footer)]:flex-1">
       <ScrollToTop />
       <NavBar />
       <Routes>

@@ -1,12 +1,69 @@
-*, *::before, *::after { box-sizing: border-box; }
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Nunito+Sans:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-rose: #DFA3A4;
+  --color-mocha: #854937;
+  --color-cream: #F2E8E4;
+  --color-terra: #A4533A;
+  --color-dark: #2B1A14;
+
+  --font-serif: 'Inria Serif', 'Georgia', serif;
+  --font-sans: 'Inria Serif', 'Georgia', serif;
+  --font-nunito: 'Nunito Sans', 'Georgia', sans-serif;
+}
+
+@keyframes leaf-slide-left {
+  from { opacity: 0; left: -250px; }
+  to   { opacity: 0.85; left: -100px; }
+}
+
+@keyframes leaf-slide-right {
+  from { opacity: 0; right: -200px; }
+  to   { opacity: 0.85; right: -60px; }
+}
+
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes chevron-bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(6px); }
+}
+
+@keyframes swipe-in-left {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes swipe-in-right {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes lightbox-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: var(--font-sans);
+  color: var(--color-dark);
+  background: var(--color-cream);
 }
 
 #root {
   width: 100%;
   min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
