@@ -45,8 +45,8 @@ export default function About() {
         ref={contentRef}
         className={`p-0 transition-[opacity,transform] duration-800 ease-out ${visible ? 'translate-y-0 opacity-100' : 'translate-y-7 opacity-0'}`}
       >
-        <div className="bg-cream/78 p-14 max-md:p-8 max-sm:p-6">
-          <div className="rounded-xl flex max-w-full flex-col gap-5 bg-cream p-12 max-md:p-0 max-sm:p-4 shadow">
+<div className="border border-terra/30 bg-cream/78 p-14 max-md:p-8 max-sm:p-6">
+  <div className="rounded-xl flex max-w-full flex-col gap-5 bg-cream p-12 max-md:p-6 max-sm:p-4 shadow">
             <p className="font-nunito text-[1.45rem] leading-[1.85] text-[#4a2e22] max-sm:text-base max-sm:leading-[1.7]">
               <span className="font-serif text-[clamp(24px,3.5vw,48px)] leading-none font-normal align-baseline text-terra">Isabelle's</span> love for performing began at an early age, growing up in a lively and
               music-rich Filipino household in Central New Jersey. Whether singing solo at the yearly
