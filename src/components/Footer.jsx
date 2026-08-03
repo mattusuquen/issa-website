@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const socials = [
   {
     label: 'LinkedIn',
@@ -41,7 +43,7 @@ export default function Footer() {
   return (
     <footer className="h-14 bg-dark px-7">
       <div className="flex h-full items-center gap-5">
-        <span className="font-serif text-sm tracking-[0.04em] whitespace-nowrap text-cream">Let's Connect</span>
+        <Link to="/contact" className="font-serif text-sm tracking-[0.04em] whitespace-nowrap text-cream no-underline transition-colors duration-150 hover:text-terra">Let's Connect</Link>
         <div className="flex items-center gap-2.5">
           {socials.map(({ label, href, icon }) => (
             <a
