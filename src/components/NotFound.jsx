@@ -25,7 +25,7 @@ export default function NotFound() {
 
       <Link
         to="/"
-        className="mt-10 animate-[hero-fade-up_0.8s_ease_forwards] border-none bg-mocha px-6 py-4 text-[0.85rem] tracking-[0.14em] text-white uppercase no-underline transition-colors duration-200 opacity-0 delay-1000 hover:bg-terra"
+        className="mt-10 rounded-md animate-[hero-fade-up_0.8s_ease_forwards] border-none bg-mocha px-6 py-4 text-[0.85rem] tracking-[0.14em] text-white uppercase no-underline transition-colors duration-200 opacity-0 delay-1000 hover:bg-terra"
       >
         Back Home
       </Link>
