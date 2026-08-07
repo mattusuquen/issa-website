@@ -8,6 +8,7 @@ import Awards from './components/Awards'
 import Gallery from './components/Gallery'
 import Contact from './components/Contact'
 import HeadshotsResume from './components/HeadshotsResume'
+import NotFound from './components/NotFound'
 import ScrollToTop from './components/ScrollToTop'
 
 function MediaPage() {
@@ -30,6 +31,7 @@ export default function App() {
         <Route path="/gallery"  element={<GalleryPage />} />
         <Route path="/contact"  element={<Contact />} />
         <Route path="/hr"       element={<HeadshotsResume />} />
+        <Route path="*"        element={<NotFound />} />
       </Routes>
       <Footer />
     </div>
