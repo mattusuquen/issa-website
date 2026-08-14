@@ -32,9 +32,9 @@ export default function Hero() {
       </div>
 
       <div className="relative z-1 grid animate-[hero-fade-up_0.8s_ease_forwards] grid-cols-3 items-end gap-3 px-12 opacity-0 delay-1000 max-md:px-8 max-sm:gap-2 max-sm:px-5">
-        <img src="/headshot1.jpg" alt="Isabelle Usuquen" className="block aspect-3/4 w-full rounded-sm object-cover object-top" />
-        <img src="/headshot2.jpg" alt="Isabelle Usuquen" className="mb-[-8px] block aspect-[2.5/4] w-full rounded-sm object-cover object-top" />
-        <img src="/headshot.jpg" alt="Isabelle Usuquen" className="block aspect-3/4 w-full rounded-sm object-cover object-[center_48%]" />
+        <img src="/IMG_6219.PNG" alt="Isabelle Usuquen" className="block aspect-3/4 w-full -scale-x-100 rounded-sm object-cover object-top" />
+        <img src="/IMG_6222.PNG" alt="Isabelle Usuquen" className="mb-[-8px] block aspect-[2.5/4] w-full rounded-sm object-cover object-top" />
+        <img src="/IMG_6220.PNG" alt="Isabelle Usuquen" className="block aspect-3/4 w-full rounded-sm object-cover object-top" />
       </div>
 
       <div className="relative z-1 flex animate-[hero-fade-up_0.8s_ease_forwards] flex-col items-center gap-5 px-12 pt-7 pb-22 opacity-0 delay-1000 max-md:px-8 max-md:pt-6 max-md:pb-14 max-sm:px-5 max-sm:pt-5 max-sm:pb-12">
