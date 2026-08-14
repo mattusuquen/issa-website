@@ -8,7 +8,12 @@ export default function About() {
     const el = contentRef.current
     if (!el) return
     const observer = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          observer.disconnect()
+        }
+      },
       { threshold: 0.05 }
     )
     observer.observe(el)
@@ -17,10 +22,20 @@ export default function About() {
 
   return (
     <section
-      className="relative bg-[url('/headshot3.png')] bg-cover bg-top bg-scroll [@media(hover:hover)_and_(pointer:fine)]:bg-fixed"
+      className="relative sm:bg-[url('/headshot3.png')] sm:bg-cover sm:bg-top [@media(hover:hover)_and_(pointer:fine)]:bg-fixed"
       id="about"
     >
-      <div className="relative flex min-h-[calc(100vh-60px)] animate-[hero-fade-up_0.8s_ease_forwards] items-center justify-center px-12 opacity-0 delay-100 max-md:px-6 max-md:pt-20 max-md:pb-14">
+      <div className="relative hidden max-sm:block">
+        <img src="/headshot3.png" alt="Isabelle Usuquen" className="block w-full object-cover object-top" />
+        <div className="absolute inset-0 flex items-center justify-center px-6">
+          <div className="flex items-center gap-[3vw] border-2 border-terra bg-cream/78 px-[5vw] py-[3.5vw]">
+            <span className="[writing-mode:vertical-rl] rotate-180 text-[clamp(0.85rem,3.2vw,1.5rem)] tracking-[0.28em] text-terra uppercase [text-orientation:mixed]">About</span>
+            <span className="font-serif text-[clamp(24px,8vw,60px)] leading-none font-normal tracking-[0.04em] text-dark uppercase">Isabelle</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="relative flex min-h-[calc(100vh-60px)] animate-[hero-fade-up_0.8s_ease_forwards] items-center justify-center px-12 opacity-0 delay-100 max-sm:hidden max-md:px-6 max-md:pt-20 max-md:pb-14">
         <div className="flex items-center gap-5 border-2 border-terra bg-cream/78 px-14 py-7 max-md:px-9 max-md:py-5">
           <span className="[writing-mode:vertical-rl] rotate-180 text-[1.5rem] tracking-[0.28em] text-terra uppercase [text-orientation:mixed]">About</span>
           <span className="font-serif text-[clamp(32px,4.5vw,60px)] leading-none font-normal tracking-[0.04em] text-dark uppercase">Isabelle</span>
