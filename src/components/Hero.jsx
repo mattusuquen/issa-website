@@ -31,7 +31,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="relative z-1 grid animate-[hero-fade-up_0.8s_ease_forwards] grid-cols-3 items-end gap-3 px-12 opacity-0 delay-1000 max-md:px-8 max-sm:gap-2 max-sm:px-5">
+      <div className="relative z-1 grid animate-[hero-fade-up_0.8s_ease_forwards] grid-cols-3 items-end gap-3 px-4 opacity-0 delay-1000 max-md:px-3 max-sm:gap-2 max-sm:px-2">
         <img src="/IMG_6219.PNG" alt="Isabelle Usuquen" className="block aspect-3/4 w-full -scale-x-100 rounded-sm object-cover object-top" />
         <img src="/IMG_6222.PNG" alt="Isabelle Usuquen" className="mb-[-8px] block aspect-[2.5/4] w-full rounded-sm object-cover object-top" />
         <img src="/IMG_6220.PNG" alt="Isabelle Usuquen" className="block aspect-3/4 w-full rounded-sm object-cover object-top" />
