@@ -62,6 +62,7 @@ function Marquee({ images, onImageClick }) {
     didDrag: false,
   })
   const rafRef = useRef(null)
+  const visibleRef = useRef(true)
 
   useEffect(() => {
     const track = trackRef.current
@@ -75,6 +76,12 @@ function Marquee({ images, onImageClick }) {
 
     const tick = (time) => {
       const s = stateRef.current
+
+      if (!visibleRef.current) {
+        s.lastTime = null
+        rafRef.current = requestAnimationFrame(tick)
+        return
+      }
 
       if (s.nudgeTarget !== null) {
         // Smoothly lerp toward nudge target
@@ -102,10 +109,17 @@ function Marquee({ images, onImageClick }) {
       rafRef.current = requestAnimationFrame(tick)
     }
 
+    const observer = new IntersectionObserver(
+      ([entry]) => { visibleRef.current = entry.isIntersecting },
+      { threshold: 0 }
+    )
+    observer.observe(track)
+
     rafRef.current = requestAnimationFrame(tick)
     return () => {
       cancelAnimationFrame(rafRef.current)
       clearTimeout(timer)
+      observer.disconnect()
     }
   }, [])
 
@@ -177,12 +191,14 @@ function Marquee({ images, onImageClick }) {
         onTouchMove={(e) => { e.preventDefault(); dragMove(e.touches[0].clientX) }}
         onTouchEnd={dragEnd}
       >
-        <div className="flex w-max gap-3" ref={trackRef}>
+        <div className="flex w-max gap-3 will-change-transform" ref={trackRef}>
           {doubled.map((item, i) => (
             <img
               key={i}
               src={item.src}
               alt={item.show}
+              loading={i < images.length ? 'eager' : 'lazy'}
+              decoding="async"
               className="block h-70 w-auto shrink-0 cursor-pointer object-cover"
               draggable={false}
               onClick={() => handleClick(item)}

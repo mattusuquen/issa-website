@@ -43,6 +43,16 @@
   to   { transform: translateX(0); }
 }
 
+@keyframes swipe-out-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+@keyframes swipe-out-right {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
+
 @keyframes lightbox-fade {
   from { opacity: 0; }
   to   { opacity: 1; }
