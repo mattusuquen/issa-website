@@ -20,16 +20,7 @@ const platforms = [
     items: [
       { url: 'https://www.instagram.com/reel/DX4glVbxtCw/embed', title: 'Instagram Reel' },
     ],
-  },
-  {
-    key: 'tiktok',
-    label: 'TikTok',
-    url: 'https://www.tiktok.com/@isabelle.usuquen?_r=1&_t=ZT-984N27cGbhF',
-    aspect: '9 / 16',
-    items: [
-      { url: 'https://www.tiktok.com/embed/v2/7665142866901077262', title: 'TikTok Video' },
-    ],
-  },
+  }
 ]
 
 function PlatformRow({ label, url, aspect, items }) {
