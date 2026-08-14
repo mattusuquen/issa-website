@@ -24,18 +24,30 @@ export default function Contact() {
   }
 
   return (
-    <section className="flex flex-col items-center bg-cream pb-24" id="contact">
-      <div className="my-16 animate-[hero-fade-up_0.8s_ease_forwards] border-[1.5px] border-terra px-16 py-4.5 opacity-0 delay-100">
+    <section className="relative flex flex-col items-center overflow-hidden bg-cream pb-24" id="contact">
+      <img
+        src="/leaf.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute top-[-200px] left-[-100px] z-0 w-105 -scale-x-100 rotate-80 pointer-events-none opacity-85 animate-[leaf-slide-left_1.2s_ease_0.3s_both] max-sm:top-[-110px] max-sm:left-[-65px] max-sm:w-60"
+      />
+      <img
+        src="/leaf.png"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[-60px] bottom-[-200px] z-0 w-105 opacity-85 animate-[leaf-slide-right_1.2s_ease_0.3s_both] max-sm:right-[-32px] max-sm:bottom-[-110px] max-sm:w-60"
+      />
+      <div className="relative z-1 my-16 animate-[hero-fade-up_0.8s_ease_forwards] border-[1.5px] border-terra px-16 py-4.5 opacity-0 delay-100">
         <span className="font-serif text-[clamp(24px,3vw,36px)] font-normal tracking-[0.22em] text-dark uppercase">Contact</span>
       </div>
 
-      <div className="mx-auto flex w-full max-w-275 flex-col items-center gap-4 text-center">
+      <div className="relative z-1 mx-auto flex w-full max-w-275 flex-col items-center gap-4 text-center">
         <h2 className="animate-[hero-fade-up_0.8s_ease_forwards] font-serif text-[clamp(36px,5vw,64px)] font-normal text-dark opacity-0 delay-[400ms]">Isabelle Usuquen</h2>
 
         <img
-          src="/headshot1.jpg"
+          src="/IMG_6219.PNG"
           alt="Isabelle Usuquen"
-          className="my-6 block w-[calc(100%-48px)] max-w-140 animate-[hero-fade-up_0.8s_ease_forwards] rounded-2xl opacity-0 delay-[700ms]"
+          className="my-6 block w-[calc(100%-48px)] -scale-x-100 max-w-140 animate-[hero-fade-up_0.8s_ease_forwards] rounded-sm opacity-0 delay-[700ms]"
         />
 
         <form
