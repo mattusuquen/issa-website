@@ -51,12 +51,9 @@ function PlatformRow({ label, url, aspect, items }) {
       {total === 0 ? (
         <div className="px-0 py-6 text-[0.8rem] tracking-[0.18em] text-dark/40 uppercase">Coming soon</div>
       ) : (
-        <div className="flex items-center justify-center gap-12">
-          {total > 1 && (
-            <button className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center border-none bg-none text-[2.25rem] text-terra transition-opacity duration-150 hover:opacity-70" onClick={prev} aria-label="Previous">&#8249;</button>
-          )}
+        <div className="relative flex justify-center">
           <div
-            className={`relative overflow-hidden ${aspect === '9 / 16' ? 'w-85 flex-none' : 'flex-1'}`}
+            className={`relative overflow-hidden ${aspect === '9 / 16' ? 'w-85 flex-none' : 'w-full'}`}
             style={{ aspectRatio: aspect }}
           >
             <iframe
@@ -69,7 +66,10 @@ function PlatformRow({ label, url, aspect, items }) {
             />
           </div>
           {total > 1 && (
-            <button className="flex h-9 w-9 shrink-0 cursor-pointer items-center justify-center border-none bg-none text-[2.25rem] text-terra transition-opacity duration-150 hover:opacity-70" onClick={next} aria-label="Next">&#8250;</button>
+            <>
+              <button className="absolute top-1/2 left-2 z-10 flex h-9 w-9 shrink-0 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-none bg-cream/80 pb-[5px] text-[2.25rem] leading-none text-terra transition-opacity duration-150 hover:opacity-70" onClick={prev} aria-label="Previous">&#8249;</button>
+              <button className="absolute top-1/2 right-2 z-10 flex h-9 w-9 shrink-0 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full border-none bg-cream/80 pb-[5px] text-[2.25rem] leading-none text-terra transition-opacity duration-150 hover:opacity-70" onClick={next} aria-label="Next">&#8250;</button>
+            </>
           )}
         </div>
       )}
