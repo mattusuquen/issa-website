@@ -82,7 +82,7 @@ export default function HeadshotsResume() {
                 href={headshots[shotIndex]}
                 download
                 aria-label={`Download headshot ${shotIndex + 1}`}
-                className="absolute bottom-3 left-1/2 z-10 -translate-x-1/2 translate-y-2 border border-dark bg-cream px-4.5 py-2 text-[0.72rem] tracking-[0.14em] whitespace-nowrap text-dark uppercase opacity-0 no-underline transition-[opacity,transform,background-color,color] duration-200 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-dark hover:text-cream"
+                className="absolute bottom-3 left-1/2 z-10 -translate-x-1/2 border border-dark bg-cream px-4.5 py-2 text-[0.72rem] tracking-[0.14em] whitespace-nowrap text-dark uppercase no-underline transition-[background-color,color] duration-200 hover:bg-dark hover:text-cream"
               >
                 Download
               </a>
@@ -114,7 +114,7 @@ export default function HeadshotsResume() {
               href="/resume.pdf"
               download
               aria-label="Download resume"
-              className="absolute bottom-3 left-1/2 -translate-x-1/2 translate-y-2 border border-dark bg-cream px-4.5 py-2 text-[0.72rem] tracking-[0.14em] whitespace-nowrap text-dark uppercase opacity-0 no-underline transition-[opacity,transform,background-color,color] duration-200 group-hover:translate-y-0 group-hover:opacity-100 hover:bg-dark hover:text-cream"
+              className="absolute bottom-3 left-1/2 -translate-x-1/2 border border-dark bg-cream px-4.5 py-2 text-[0.72rem] tracking-[0.14em] whitespace-nowrap text-dark uppercase no-underline transition-[background-color,color] duration-200 hover:bg-dark hover:text-cream"
             >
               Download Resume
             </a>
