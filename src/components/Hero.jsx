@@ -31,7 +31,7 @@ export default function Hero() {
         </div>
 
         <p className="animate-[hero-fade-up_0.8s_ease_forwards] text-[0.85rem] tracking-[0.18em] text-dark uppercase opacity-0 delay-[550ms]">
-          Actress &nbsp;|&nbsp; Singer &nbsp;|&nbsp; Dancer
+          Actor &nbsp;|&nbsp; Singer &nbsp;|&nbsp; Dancer
         </p>
       </div>
 
