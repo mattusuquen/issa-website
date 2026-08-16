@@ -1,4 +1,8 @@
+import { useState } from 'react'
+
 export default function Hero() {
+  const [showCredit, setShowCredit] = useState(false)
+
   return (
     <section className="relative overflow-hidden bg-cream text-dark">
       <img
@@ -32,10 +36,40 @@ export default function Hero() {
       </div>
 
       <div className="relative z-1 grid animate-[hero-fade-up_0.8s_ease_forwards] grid-cols-3 items-end gap-3 px-4 opacity-0 delay-1000 max-md:px-3 max-sm:gap-2 max-sm:px-2">
-        <img src="/IMG_6219.PNG" alt="Isabelle Usuquen" className="block aspect-3/4 w-full -scale-x-100 rounded-sm object-cover object-top" />
-        <img src="/IMG_6222.PNG" alt="Isabelle Usuquen" className="mb-[-8px] block aspect-[2.5/4] w-full rounded-sm object-cover object-top" />
-        <img src="/IMG_6220.PNG" alt="Isabelle Usuquen" className="block aspect-3/4 w-full rounded-sm object-cover object-top" />
+        <button type="button" onClick={() => setShowCredit(true)} className="block cursor-pointer border-none bg-none p-0">
+          <img src="/IMG_6219.PNG" alt="Isabelle Usuquen" className="block aspect-3/4 w-full -scale-x-100 rounded-sm object-cover object-top" />
+        </button>
+        <button type="button" onClick={() => setShowCredit(true)} className="mb-[-8px] block cursor-pointer border-none bg-none p-0">
+          <img src="/IMG_6221.PNG" alt="Isabelle Usuquen" className="block aspect-[2.5/4] w-full rounded-sm object-cover object-top" />
+        </button>
+        <button type="button" onClick={() => setShowCredit(true)} className="block cursor-pointer border-none bg-none p-0">
+          <img src="/IMG_6220.PNG" alt="Isabelle Usuquen" className="block aspect-3/4 w-full rounded-sm object-cover object-top" />
+        </button>
       </div>
+
+      {showCredit && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-dark/50 px-6 animate-[lightbox-fade_0.2s_ease_forwards]"
+          onClick={() => setShowCredit(false)}
+        >
+          <div
+            className="relative flex flex-col items-center gap-4 border-2 border-terra bg-cream px-12 py-8 text-center shadow-lg max-sm:px-8 max-sm:py-6"
+            onClick={e => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setShowCredit(false)}
+              aria-label="Close"
+              className="absolute top-2 right-3 cursor-pointer border-none bg-none text-2xl leading-none text-terra transition-opacity duration-150 hover:opacity-70"
+            >
+              &times;
+            </button>
+            <p className="font-serif text-[clamp(18px,2.5vw,26px)] tracking-[0.06em] text-dark uppercase">
+              Photo by Robert Quiles
+            </p>
+          </div>
+        </div>
+      )}
 
       <div className="relative z-1 flex animate-[hero-fade-up_0.8s_ease_forwards] flex-col items-center gap-5 px-12 pt-7 pb-22 opacity-0 delay-1000 max-md:px-8 max-md:pt-6 max-md:pb-14 max-sm:px-5 max-sm:pt-5 max-sm:pb-12">
         <span className="block h-px w-4/5 max-w-125 bg-rose" />
