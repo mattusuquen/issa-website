@@ -58,7 +58,7 @@ export default function About() {
       <div
         id="about-content"
         ref={contentRef}
-        className={`p-0 transition-[opacity,transform] duration-800 ease-out ${visible ? 'translate-y-0 opacity-100' : 'translate-y-7 opacity-0'}`}
+        className={`p-0 transition-[opacity,transform] duration-800 ease-out max-sm:bg-[url('/about-bg-mobile.png')] max-sm:bg-cover max-sm:bg-center ${visible ? 'translate-y-0 opacity-100' : 'translate-y-7 opacity-0'}`}
       >
 <div className="border border-terra/30 bg-cream/78 p-14 max-md:p-8 max-sm:p-6">
   <div className="rounded-xl flex max-w-full flex-col gap-5 bg-cream p-12 max-md:p-6 max-sm:p-4 shadow">
